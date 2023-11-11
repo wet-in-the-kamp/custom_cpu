@@ -49,3 +49,4 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name VHDL_FILE pc.vhd
 set_global_assignment -name VHDL_FILE general_register.vhd
+set_global_assignment -name VHDL_FILE output_register.vhd
