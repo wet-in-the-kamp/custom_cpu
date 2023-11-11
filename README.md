@@ -70,5 +70,19 @@ a real tri-state bus is equivalent.
 I will update this README little by little as I make progress. I consider myself a novice in this domain so I accept any 
 pointers or comments openly. 
 
+## Updates
+
+* **9 Nov 2023** : [pc.vhd](/pc.vhd) is now complete and is a description of the program counter in the processor. It is a basic register and 16-bit binary counter.
+16-bits should allow for a decent sized addressable memory space for both the program code and program data (8kB). The corresponding
+simulation file, [pc.do](/simulation/pc.do), simulates this component. The PC constantly outputs its value since the bus Mux will 
+handle selecting the correct signals. For now the PC is a simple binary counter and does not take into account the base and offset format 
+needed to address an Avalon slave. This will either be taken into account in the instruction decoder which will act as a master to 
+fetch data from RAM, or the PC will be modified later on. In the case where the instruction decoder handles this, the PC output can simply be used 
+as the offset. 
+
+* **11 Nov 2023** : [general_register.vhd](/general_register.vhd) is also complete and is the template that will be used for both the A and B registers, since they have
+the same behavior. They are simple 32-bit registers that can store a value and constantly output their value. This value is used by the bus Mux
+and fed directly into the ALU. This behavior is simulated with [register.do](/simulation/register.do). 
+
 ## License
 This software is open source according to the Apache License 2.0. 
