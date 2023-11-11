@@ -80,9 +80,12 @@ needed to address an Avalon slave. This will either be taken into account in the
 fetch data from RAM, or the PC will be modified later on. In the case where the instruction decoder handles this, the PC output can simply be used 
 as the offset. 
 
-* **11 Nov 2023** : [general_register.vhd](/general_register.vhd) is also complete and is the template that will be used for both the A and B registers, since they have
+* **11 Nov 2023** : [general_register.vhd](/general_register.vhd) is complete and is the template that will be used for both the A and B registers, since they have
 the same behavior. They are simple 32-bit registers that can store a value and constantly output their value. This value is used by the bus Mux
-and fed directly into the ALU. This behavior is simulated with [register.do](/simulation/register.do). 
+and fed directly into the ALU. This behavior is simulated with [register.do](/simulation/register.do).
+[output_register.vhd](/output_register.vhd) has also been completed. This is the module that will be directly connected to the LCD Matrix. It is a simple register
+that takes an input and can output the value synchronously. This will allow the user to visualize data when programming the processor. This module
+was tested with [output_reg.do](/simulation/output_reg.do). 
 
 ## License
 This software is open source according to the Apache License 2.0. 
