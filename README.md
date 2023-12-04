@@ -85,7 +85,13 @@ the same behavior. They are simple 32-bit registers that can store a value and c
 and fed directly into the ALU. This behavior is simulated with [register.do](/simulation/register.do).
 [output_register.vhd](/output_register.vhd) has also been completed. This is the module that will be directly connected to the LCD Matrix. It is a simple register
 that takes an input and can output the value synchronously. This will allow the user to visualize data when programming the processor. This module
-was tested with [output_reg.do](/simulation/output_reg.do). 
+was tested with [output_reg.do](/simulation/output_reg.do).
+
+* **4 Dec 2023** : [alu.vhd](/alu.vhd) is complete and has been tested. The ALU differs slightly from Ben Eater's version
+and from the SAP1 in terms of flags. Only the addition and subtraction operations are implemented and two flags are present: zero and negative/positive flag. These two flags were chosen for their simplicity in terms of implementation and for their effectiveness
+in programming. I may eventually come back to the ALU as it obviously defines what the processor is capable of doing and if I see
+that I am shooting myself in the foot by not implementing some fairly simple things then I will modify it. When I do more
+research on the C compiler, this will become more clear. For now I am satisfied with a very simple ALU. 
 
 ## License
 This software is open source according to the Apache License 2.0. 
