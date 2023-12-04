@@ -19,7 +19,8 @@ port(
 	add_sub_n:		in std_logic; --when high, add when low, subtract
 	
 	--Flags
-	carry:			out std_logic
+	neg_pos_n:		out std_logic; --when high, negative result, when low positive
+	zero:				out std_logic --high when result is zero
 	
 );
 end entity alu;
@@ -27,30 +28,36 @@ end entity alu;
 architecture Descr of alu is
 
 --Register
-signal iSum: 			std_logic_vector(32 downto 0);
-signal iAextend:		std_logic_vector(32 downto 0);
-signal iBextend:		std_logic_vector(32 downto 0);
+signal iSum: 			std_logic_vector(31 downto 0);
 
 
 begin
 
-busOut 		<= iSum(31 downto 0); --always output to the bus
-carry  		<= iSum(32);
-iAextend		<= "0" & aIn; --extend the signal with an extra bit
-iBextend		<= "0" & bIn;
+busOut 		<= iSum; --always output to the bus
+neg_pos_n  	<= iSum(31); --two's complement
 
 pCalc:
 	process(Clk, Reset)
 	begin
 		if Reset = '1' then
-			iSum <= B"0" & X"00000000"; --33 bit value through concatenation		
+			iSum <= (others=> '0');		
 		elsif rising_edge(Clk) then
 			if add_sub_n = '1' then
-				iSum <= std_logic_vector(unsigned(iAextend) + unsigned(iBextend));
+				iSum <= std_logic_vector(signed(aIn) + signed(bIn));
 			else
-				iSum <= std_logic_vector(signed(iAextend) - signed(iBextend));
+				iSum <= std_logic_vector(signed(aIn) - signed(bIn));
 			end if;		
 		end if;
 	end process pCalc;
+	
+pZero:
+	process(iSum)
+	begin
+		if iSum = X"00000000" then
+			zero <= '1';
+		else
+			zero <= '0';
+		end if;
+	end process pZero;
 		
 end architecture Descr;
