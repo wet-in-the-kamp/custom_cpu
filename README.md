@@ -91,7 +91,9 @@ was tested with [output_reg.do](/simulation/output_reg.do).
 and from the SAP1 in terms of flags. Only the addition and subtraction operations are implemented and two flags are present: zero and negative/positive flag. These two flags were chosen for their simplicity in terms of implementation and for their effectiveness
 in programming. I may eventually come back to the ALU as it obviously defines what the processor is capable of doing and if I see
 that I am shooting myself in the foot by not implementing some fairly simple things then I will modify it. When I do more
-research on the C compiler, this will become more clear. For now I am satisfied with a very simple ALU. 
+research on the C compiler, this will become more clear. For now I am satisfied with a very simple ALU.
+
+* **6 Dec 2023** : [mar.vhd](/mar.vhd) is complete and has been simulated (see the [simulation folder](/simulation)). The code is very similar to the general register design, the main difference being that the output goes directly to the RAM and thus does not have an output control signal. 
 
 ## License
 This software is open source according to the Apache License 2.0. 
