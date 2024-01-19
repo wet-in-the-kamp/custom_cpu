@@ -51,3 +51,7 @@ set_global_assignment -name VHDL_FILE pc.vhd
 set_global_assignment -name VHDL_FILE general_register.vhd
 set_global_assignment -name VHDL_FILE output_register.vhd
 set_global_assignment -name VHDL_FILE alu.vhd
+set_global_assignment -name VHDL_FILE mar.vhd
+set_global_assignment -name VHDL_FILE ir.vhd
+set_global_assignment -name QIP_FILE ram.qip
+set_global_assignment -name MIF_FILE ram_init.mif
