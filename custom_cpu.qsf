@@ -55,3 +55,4 @@ set_global_assignment -name VHDL_FILE mar.vhd
 set_global_assignment -name VHDL_FILE ir.vhd
 set_global_assignment -name QIP_FILE ram.qip
 set_global_assignment -name MIF_FILE ram_init.mif
+set_global_assignment -name VHDL_FILE my_bus.vhd
