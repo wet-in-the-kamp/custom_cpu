@@ -1,0 +1,39 @@
+Instruction Name  |  Description
+-----------------------------------------------------------------------------------
+Fetch		  |  Load PC value into MAR and then output RAM value into IR while
+		  |  incrementing the PC 
+-----------------------------------------------------------------------------------
+NOP		  |  No operation
+-----------------------------------------------------------------------------------
+LDA		  |  Load the IR parameter value into the MAR then output the value
+		  |  located in RAM into register A 
+-----------------------------------------------------------------------------------
+ADD		  |  Load the IR parameter value into the MAR then output the value
+		  |  located in RAM into register B. Then add A with B and store
+		  |  the result in register A. 
+-----------------------------------------------------------------------------------
+SUB		  |  Load the IR parameter value into the MAR then output the value
+		  |  located in RAM into register B. The subtract B from A and store
+		  |  the result in register A. 
+-----------------------------------------------------------------------------------
+STA		  |  Load the IR parameter value into the MAR then output the value
+		  |  located in register A into RAM 
+-----------------------------------------------------------------------------------
+LDI		  |  Load the IR parameter value directly into the A register
+-----------------------------------------------------------------------------------
+JMP		  |  Load the IR parameter value directly into the PC
+-----------------------------------------------------------------------------------
+OUT		  |  Load the A register value into the output register
+-----------------------------------------------------------------------------------
+LDB		  |  Load the IR parameter value into the MAR then output the value
+		  |  located in RAM into register B
+-----------------------------------------------------------------------------------
+JPN		  |  Jump if negative. If the np_n ALU flag is high (indicating a 
+		  |  negative result) then jump to specified address. If not then
+		  |  NOP. The jump is implemented in the same way as JMP. 
+-----------------------------------------------------------------------------------
+JPZ		  |  Jump if zero. If the z ALU flag is high (indicating a null
+		  |  result) then jump to specified address. If not then
+		  |  NOP. The jump is implemented in the same way as JMP. 
+
+		  

@@ -1,18 +1,18 @@
-Name        | Description	       	  | Exclusive to bus?
-------------|-----------------------------|------------------
-pc_in       | Program counter in          | No
-pc_enable   | Program counter increment   | Not in bus
-pc_out      | Program counter out         | Yes
-a_in	    | A register in		  | No
-a_out	    | A register out		  | Yes
-b_in        | B register in		  | No
-b_out	    | B register out		  | Yes
-add_sub_n   | ALU add when high, subtract | Not in bus
-	    | when low			  | 
-alu_out	    | ALU register out		  | Yes
-output_in   | Output register in	  | No
-mar_in	    | Memory Access register in   | No
-ram_wren    | RAM write enable		  | No
-ram_out     | Output RAM		  | Yes
-ir_in	    | Instruction register in	  | No
-ir_out	    | Instruction register out	  | Yes
+Name        | Description	       	  | Exclusive to bus? | Shorthand
+------------|-----------------------------|-------------------------------
+pc_in       | Program counter in          | No		      | pci
+pc_enable   | Program counter increment   | Not in bus	      | pce
+pc_out      | Program counter out         | Yes		      | pco
+a_in	    | A register in		  | No		      | ai
+a_out	    | A register out		  | Yes		      | ao
+b_in        | B register in		  | No		      | bi
+b_out	    | B register out		  | Yes		      | bo
+add_sub_n   | ALU add when high, subtract | Not in bus	      | asn
+	    | when low			  |                   |
+alu_out	    | ALU register out		  | Yes		      | alo
+output_in   | Output register in	  | No		      | oi
+mar_in	    | Memory Access register in   | No		      | mi
+ram_wren    | RAM write enable		  | No		      | re
+ram_out     | Output RAM		  | Yes		      | ro
+ir_in	    | Instruction register in	  | No		      | ii
+ir_out	    | Instruction register out	  | Yes		      | io
