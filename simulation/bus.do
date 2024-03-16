@@ -34,7 +34,7 @@ force -freeze sim:/my_bus/pc_data_out 0000000000000000 0
 force -freeze sim:/my_bus/a_data_out 00000000000000000000000000000001 0
 force -freeze sim:/my_bus/b_data_out 00000000000000000000000000000010 0
 force -freeze sim:/my_bus/alu_data_out 00000000000000000000000000000101 0
-force -freeze sim:/my_bus/ram_data_out 00000000000000000000000000011001 0
+force -freeze sim:/my_bus/ram_data_out 01100000000000000000000000011001 0
 force -freeze sim:/my_bus/ir_data_out 0000000000000011 0
 
 # Set all control signals to zero to start

@@ -53,12 +53,14 @@ pInputData:
 	process(iOutSignals, ir_data_out, ram_data_out, alu_data_out, b_data_out, a_data_out, pc_data_out)
 	begin
 		case iOutSignals is
-			when B"000001" => iBus(15 downto 0) <= ir_data_out;
+			when B"000001" => iBus(15 downto 0)  <= ir_data_out;
+									iBus(31 downto 16) <= (others => '0'); 
 			when B"000010" => iBus <= ram_data_out;
 			when B"000100" => iBus <= alu_data_out;
 			when B"001000" => iBus <= b_data_out;
 			when B"010000" => iBus <= a_data_out;
-			when B"100000" => iBus(15 downto 0) <= pc_data_out;
+			when B"100000" => iBus(15 downto 0)  <= pc_data_out;
+									iBus(31 downto 16) <= (others => '0');
 			when others => iBus <= X"00000000";
 		end case;
 	end process pInputData;
