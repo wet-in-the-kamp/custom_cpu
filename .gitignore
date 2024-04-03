@@ -1,4 +1,20 @@
-*/db/
-*/incremental_db/
-_output_files/
+# Ignore all files with certain extensions
+
+*.mti
+*.mpf
+*.cmp
+*.wlf
 *.bak
+
+# Directories to ignore
+
+.qsys_edit/
+db/
+greybox_tmp/
+incremental_db/
+output_files/
+work/
+
+# Ignore specific files
+
+transcript
