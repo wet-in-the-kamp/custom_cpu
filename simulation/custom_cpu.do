@@ -36,4 +36,4 @@ run 40ns
 
 # Run program
 force -freeze sim:/custom_cpu/Reset 0 0
-run 1000ns
+run 2400ns
